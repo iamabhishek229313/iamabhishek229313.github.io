@@ -38,9 +38,117 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Initialize Particle Background
+    initParticleBackground();
+
     // Fetch LeetCode Stats
     fetchLeetCodeStats();
 });
+
+// Particle Background System
+function initParticleBackground() {
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let particles = [];
+    let mouse = { x: null, y: null };
+    let animationId;
+
+    // Set canvas size
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        initParticles();
+    }
+
+    // Create particle grid
+    function initParticles() {
+        particles = [];
+        const spacing = 40; // Distance between particles
+        const cols = Math.ceil(canvas.width / spacing) + 1;
+        const rows = Math.ceil(canvas.height / spacing) + 1;
+
+        for (let i = 0; i < cols; i++) {
+            for (let j = 0; j < rows; j++) {
+                particles.push({
+                    baseX: i * spacing,
+                    baseY: j * spacing,
+                    x: i * spacing,
+                    y: j * spacing,
+                    size: 2
+                });
+            }
+        }
+    }
+
+    // Mouse move handler
+    function handleMouseMove(e) {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+    }
+
+    // Animate particles
+    function animate() {
+        // Check if dark mode
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        const bgColor = isDarkMode ? '#000000' : '#FFFFFF';
+        const particleColor = isDarkMode ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)';
+
+        ctx.fillStyle = bgColor;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        particles.forEach(particle => {
+            // Calculate distance from mouse
+            if (mouse.x !== null && mouse.y !== null) {
+                const dx = mouse.x - particle.x;
+                const dy = mouse.y - particle.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                const maxDistance = 150; // Maximum influence distance
+
+                if (distance < maxDistance) {
+                    // Repulsion force - push particles away from cursor
+                    const force = (1 - distance / maxDistance) * 0.8;
+                    const angle = Math.atan2(dy, dx);
+
+                    // Apply repulsion force (negative to push away)
+                    const pushX = -Math.cos(angle) * force * 30;
+                    const pushY = -Math.sin(angle) * force * 30;
+
+                    particle.x += pushX;
+                    particle.y += pushY;
+                }
+            }
+
+            // Always apply spring force to return to base position
+            const dx = particle.baseX - particle.x;
+            const dy = particle.baseY - particle.y;
+
+            // Spring physics with damping
+            particle.x += dx * 0.05; // Lower value = slower, smoother return
+            particle.y += dy * 0.05;
+
+            // Draw particle
+            ctx.fillStyle = particleColor;
+            ctx.beginPath();
+            ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+            ctx.fill();
+        });
+
+        animationId = requestAnimationFrame(animate);
+    }
+
+    // Event listeners
+    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseleave', () => {
+        mouse.x = null;
+        mouse.y = null;
+    });
+
+    // Initialize
+    resizeCanvas();
+    animate();
+}
 
 async function fetchLeetCodeStats() {
     const username = 'iamabhishek229313';

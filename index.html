@@ -1,528 +1,372 @@
 <!DOCTYPE html>
-<!-- saved from url=(0026)https://iamabhishek229313.github.io/ -->
-<html prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
-<link type="text/css" rel="stylesheet" id="dark-mode-custom-link">
-<link type="text/css" rel="stylesheet" id="dark-mode-general-link">
-<style lang="en" type="text/css" id="dark-mode-custom-style"></style>
-<style lang="en" type="text/css" id="dark-mode-native-style"></style>
+<html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhishek Kumar | Software Engineer</title>
+  <meta name="description" content="Portfolio of Abhishek Kumar - SDE 2 at Microsoft.">
 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Portfolio - Abhishek Kumar | Software Engineer</title>
-  <meta name="viewport" content="width=device-width">
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <link rel="stylesheet" href="./assets/main.dda5b8ea.css">
-  <script async="" src="./assets/analytics.js.download"></script>
-  <script type="text/javascript" src="./assets/main.10647a82.js.download"></script>
-
-
-
-
-
-  <meta name="description"
-    content="Here you can find the list and brief descriptions of the projects I have recently completed.">
-  <link rel="canonical" href="https://iamabhishek229313.github.io/">
-
-
-
-  <meta property="og:title" content="Portfolio">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Portfolio - Abhishek Kumar | Software Engineer">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:description"
-    content="Here you can find the list and brief descriptions of the projects I have recently completed.">
-
-  <script async="" type="text/javascript" src="./assets/count.js.download"></script>
+  <!-- Styles -->
+  <link rel="stylesheet" href="./assets/style.css">
 </head>
 
-<body class="parent-portfolio" data-new-gr-c-s-check-loaded="14.1031.0" data-gr-ext-installed=""
-  cz-shortcut-listen="true">
-  
-  <aside class="site-sidebar">
-    <div class="site-sidebar-inner h-card">
-      <a href="" rel="me" class="person u-url">
-        <div class="person-avatar u-photo">
-          <img src="./assets/avatar.ad31e6ce.png" alt="" class="avatar">
+<body>
+
+  <div class="main-wrapper">
+
+    <!-- SIDEBAR (STICKY) -->
+    <aside class="sidebar">
+      <div class="profile-card">
+        <img src="./assets/avatar.ad31e6ce.png" alt="Abhishek Kumar" class="avatar">
+        <h1 class="profile-name">Abhishek Kumar</h1>
+        <p class="profile-role">Software Engineer</p>
+
+        <div class="status-badge">
+          <div class="status-dot"></div>
+          <span>Available for work</span>
         </div>
-        <div class="person-content">
-          <h1 class="person-title p-name">Abhishek Kumar</h1>
-          <h2 class="person-subtitle p-job-title p-note">Software Engineer</h2>
-        </div>
-      </a>
 
-      <nav class="block main-navigation">
-        <div class="navigation-extend-bar">
-          <div class="social-icons">
-            <a rel="me" href="mailto:iamabhishek229313@gmail.com" class="button button-icon u-email"
-              title="mail: iamabhishek229313@gmail.com">
-              <i class="fa fa-envelope"></i>
-            </a>
-
-            <a rel="me" href="https://www.linkedin.com/in/iamabhishek77/" class="button button-icon"
-              title="linkedin: iamabhishek_77">
-              <i class="fa fa-linkedin-square"></i>
-            </a>
-
-            <a rel="me" href="https://github.com/iamabhishek229313" class="button button-icon"
-              title="github: iamabhishek229313">
-              <i class="fa fa-github-square"></i>
-            </a>
-          </div>
-
-          <a href="https://iamabhishek229313.github.io/" class="navigation-extend-button js-extend-main-navigation">
-            <i class="fa fa-bars"></i>
+        <div class="sidebar-contact">
+          <a href="https://drive.google.com/file/d/1cW-4-qo2wxrI0YxllABf-lON8Tvdop1j/view?usp=sharing" target="_blank"
+            class="btn-contact btn-primary">
+            Download CV <i class="fas fa-download"></i>
+          </a>
+          <a href="mailto:iamabhishek229313@gmail.com" class="btn-contact btn-secondary">
+            Contact Me <i class="fas fa-envelope"></i>
           </a>
         </div>
 
-        <div class="navigation-extendable">
-          <ul>
-            <li class="current"><a href="Portfolio - Abhishek Kumar - Software Engineer.html">Portfolio</a></li>
-          </ul>
-          <ul>
-            <li class=""><a href="https://drive.google.com/file/d/1cW-4-qo2wxrI0YxllABf-lON8Tvdop1j/view?usp=sharing">View Resume</a></li>
-          </ul>
-          <ul>
-            <li class=""><a href="https://leetcode.com/iamabhishek229313">LeetCode</a></li>
+        <div class="sidebar-socials">
+          <a href="https://github.com/iamabhishek229313" target="_blank" class="social-link"><i
+              class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/iamabhishek77/" target="_blank" class="social-link"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a href="https://leetcode.com/iamabhishek229313" target="_blank" class="social-link"><i
+              class="fas fa-code"></i></a>
+        </div>
+      </div>
+
+      <!-- LEETCODE STATS WIDGET -->
+      <div class="leetcode-card">
+        <div class="lc-header">
+          <i class="fas fa-code lc-icon"></i> Leetcode Stats
+        </div>
+
+        <div id="lc-content">
+          <!-- Loader / Default State -->
+          <div class="lc-total" id="lc-total">...</div>
+          <div class="lc-total-label">Solved</div>
+
+          <div class="lc-stats-grid">
+            <div class="lc-stat-row">
+              <div class="lc-stat-meta">
+                <span class="lc-label-easy">Easy</span>
+                <span id="lc-easy-count">-</span>
+              </div>
+              <div class="lc-bar-bg">
+                <div class="lc-bar-fill" id="lc-easy-bar" style="background-color: #00B8A3;"></div>
+              </div>
+            </div>
+
+            <div class="lc-stat-row">
+              <div class="lc-stat-meta">
+                <span class="lc-label-medium">Medium</span>
+                <span id="lc-medium-count">-</span>
+              </div>
+              <div class="lc-bar-bg">
+                <div class="lc-bar-fill" id="lc-medium-bar" style="background-color: #FFC01E;"></div>
+              </div>
+            </div>
+
+            <div class="lc-stat-row">
+              <div class="lc-stat-meta">
+                <span class="lc-label-hard">Hard</span>
+                <span id="lc-hard-count">-</span>
+              </div>
+              <div class="lc-bar-bg">
+                <div class="lc-bar-fill" id="lc-hard-bar" style="background-color: #FF375F;"></div>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://leetcode.com/iamabhishek229313" target="_blank" class="lc-link">View Profile <i
+              class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT (SCROLLABLE) -->
+    <main class="content-area">
+
+      <!-- ABOUT -->
+      <section class="card-block">
+        <div class="section-label">01 // ABOUT</div>
+        <h2 class="hero-text">Hello, I'm Abhishek. <br>Building scalable cloud systems.</h2>
+        <p class="hero-bio">
+          I am a <strong>Software Development Engineer 2</strong> at <strong>Microsoft</strong>, working with the
+          Strategic Missions and
+          Technology (SMT) team on Azure.
+          I specialize in distributed systems, cloud architecture, and optimizing high-throughput payment systems.
+          Previously, I was a key contributor at <strong>Amazon Payment Services</strong> and a Founding Engineer at
+          <strong>Zealth-AI</strong>.
+        </p>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="card-block">
+        <div class="section-label">02 // EXPERIENCE</div>
+
+        <div class="exp-list">
+          <!-- Microsoft -->
+          <details class="exp-item" open>
+            <summary class="exp-summary">
+              <div class="exp-header-left">
+                <img src="./assets/microsoft_logo.png" alt="Microsoft" class="exp-logo">
+                <div class="exp-title-group">
+                  <span class="exp-role">Software Development Engineer 2</span>
+                  <span class="exp-company">Microsoft</span>
+                </div>
+              </div>
+              <span class="exp-date">Apr 2024 - Present</span>
+            </summary>
+            <div class="exp-details">
+              <ul>
+                <li>Working with the <strong>Microsoft Azure</strong> engineering team on high-impact cloud services.
+                </li>
+                <li>Achieved <strong>1-US Patent</strong> in engineering.</li>
+                <li>Architecting and delivering the flagship feature, <strong>"Approvals"</strong>, part of Azure's
+                  premium offerings.</li>
+                <li>Engineered Azure resources with <strong>99.9999% availability</strong> using Azure Functions, ARM
+                  templates, and Azure Policy.</li>
+                <li>Devised solutions for disaster recovery and spearheaded <strong>Operational Excellence</strong>
+                  initiatives.</li>
+                <li>Implemented a cost-optimization strategy, reducing Cosmos DB storage costs by <strong>$32,000
+                    annually</strong>.</li>
+                <li>Recognized in the Azure Bug Bash for <strong>Hacker Cup</strong> achievement.</li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- Amazon -->
+          <details class="exp-item" open>
+            <summary class="exp-summary">
+              <div class="exp-header-left">
+                <img src="./assets/amazon_logo.webp" alt="Amazon" class="exp-logo">
+                <div class="exp-title-group">
+                  <span class="exp-role">Software Development Engineer 1</span>
+                  <span class="exp-company">Amazon</span>
+                </div>
+              </div>
+              <span class="exp-date">Oct 2022 - Apr 2024</span>
+            </summary>
+            <div class="exp-details">
+              <ul>
+                <li>Worked at <strong>Amazon Payment Services</strong>; top code-contributor in a team of 30+ devs.</li>
+                <li><strong>Live Controls Service (LCS):</strong> Launched in Dec 2023, screening <strong>1M+
+                    transactions daily</strong> with 1000 peak TPS at 100ms P90 latency. Prevented 14000+ compliance
+                  lapses.</li>
+                <li>Reduced latency of core-txn-system by <strong>200ms per transaction</strong>.</li>
+                <li>Built internal applications for handling highly-confidential documents using AWS, DynamoDB, ReactJS,
+                  TypeScript, and NodeJS.</li>
+                <li>Reduced TAT on customer compensation and merchant onboarding from <strong>35 days to 6
+                    days</strong>.</li>
+                <li>Contributed to OE/EE items to reduce troubleshooting effort and enable automatic error ticketing.
+                </li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- Zealth-AI -->
+          <details class="exp-item" open>
+            <summary class="exp-summary">
+              <div class="exp-header-left">
+                <img src="./assets/zealth_logo.png" alt="Zealth-AI" class="exp-logo">
+                <div class="exp-title-group">
+                  <span class="exp-role">Founding Engineer</span>
+                  <span class="exp-company">Zealth-AI (YC W21)</span>
+                </div>
+              </div>
+              <span class="exp-date">Dec 2021 - Sep 2022</span>
+            </summary>
+            <div class="exp-details">
+              <ul>
+                <li><strong>Founding Engineer</strong> for a Y-Combinator backed startup.</li>
+                <li>Built mobile applications reaching <strong>100K+ DAU</strong> from scratch.</li>
+                <li>Developed Flutter and React Native plugins used by <strong>3 Million+ devices</strong>.</li>
+                <li>Built and deployed <strong>CareShare</strong> mobile application (iOS & Android, B2B and B2C).</li>
+                <li>Lead end-to-end development of Backend APIs on AWS using NodeJS, Python, MongoDB, and PostgreSQL.
+                </li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- Freelance -->
+          <details class="exp-item" open>
+            <summary class="exp-summary">
+              <div class="exp-header-left">
+                <div class="exp-logo"
+                  style="display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: #555;">
+                  <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="exp-title-group">
+                  <span class="exp-role">Freelance Software Engineer</span>
+                  <span class="exp-company">Various Startups</span>
+                </div>
+              </div>
+              <span class="exp-date">Jan 2020 - Present</span>
+            </summary>
+            <div class="exp-details">
+              <ul>
+                <li>Worked with many startup teams to build apps in ed-Tech, e-commerce, and more.</li>
+                <li>Built tools for Flutter and React Native developers to integrate <strong>GoKwik</strong> payment
+                  gateway plugin, targeting more than <strong>3 Million users</strong>.</li>
+                <li>Led end-to-end development from API deployment on AWS to frontend integration.</li>
+                <li>Backend development for enterprise applications using <strong>Fast-API</strong> and
+                  <strong>ArangoDB</strong>.
+                </li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="card-block">
+        <div class="section-label">03 // PROJECTS</div>
+
+        <div class="projects-scroller">
+          <!-- FinShare -->
+          <a href="https://github.com/iamabhishek229313/finshare" target="_blank" class="project-card">
+            <div>
+              <h3 class="project-title">FinShare</h3>
+              <p class="project-desc">An app, where the cardholder can share their card to partner/family/other/ and can
+                limit their their daily/monthly budgets and per-transaction limits.</p>
+            </div>
+            <span class="project-link-text">View Project <i class="fas fa-arrow-right"></i></span>
+          </a>
+
+          <!-- Track-My-Covid -->
+          <a href="https://github.com/iamabhishek229313/aws_covid_care" target="_blank" class="project-card">
+            <div>
+              <h3 class="project-title">Track-My-Covid</h3>
+              <p class="project-desc">Made personalized reports based on COVID exposure of the user by tracking their
+                location metrices.</p>
+            </div>
+            <span class="project-link-text">View Project <i class="fas fa-arrow-right"></i></span>
+          </a>
+
+          <!-- Open Source: Flutter Plugins -->
+          <a href="https://pub.dev/packages/upi_pay" target="_blank" class="project-card">
+            <div>
+              <h3 class="project-title">Flutter Plugins</h3>
+              <p class="project-desc">bouncing_characters, upi_pay, flutter_gokwik. Used by 3 Million+ devices.</p>
+            </div>
+            <span class="project-link-text">View Packages <i class="fas fa-arrow-right"></i></span>
+          </a>
+
+          <!-- Open Source: NPM Packages -->
+          <a href="https://www.npmjs.com/package/react-native-upi-pay" target="_blank" class="project-card">
+            <div>
+              <h3 class="project-title">NPM Packages</h3>
+              <p class="project-desc">react_native_upi_pay, react-native-gokwik.</p>
+            </div>
+            <span class="project-link-text">View Packages <i class="fas fa-arrow-right"></i></span>
+          </a>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="card-block">
+        <div class="section-label">04 // SKILLS</div>
+        <div class="skills-grid">
+          <div class="skill-tag"><i class="fab fa-java"></i> Java</div>
+          <div class="skill-tag"><i class="fab fa-python"></i> Python</div>
+          <div class="skill-tag"><i class="fab fa-react"></i> React</div>
+          <div class="skill-tag"><i class="fab fa-node-js"></i> Node.js</div>
+          <div class="skill-tag"><i class="fas fa-code"></i> C#</div>
+          <div class="skill-tag"><i class="fab fa-microsoft"></i> Azure</div>
+          <div class="skill-tag"><i class="fab fa-aws"></i> AWS</div>
+          <div class="skill-tag"><i class="fab fa-docker"></i> Docker</div>
+          <div class="skill-tag"><i class="fas fa-database"></i> CosmosDB</div>
+        </div>
+      </section>
+
+      <!-- ACHIEVEMENTS & ACTIVITY -->
+      <section class="card-block">
+        <div class="section-label">05 // ACHIEVEMENTS</div>
+
+        <div class="exp-details">
+          <ul style="list-style-type: none; padding-left: 0;">
+            <!-- Hackathons -->
+            <li style="margin-bottom: 12px; border-left: 2px solid #FF9900; padding-left: 12px;">
+              <strong>AWS Data Exchange Hackathon Winner 2020</strong><br>
+              <span style="color: var(--text-secondary); font-size: 0.9rem;">Stanford University. <a
+                  href="https://devpost.com/software/qwe-8a2wtn" target="_blank"
+                  style="text-decoration: underline;">View Project</a></span>
+            </li>
+            <li style="margin-bottom: 12px; border-left: 2px solid #D946EF; padding-left: 12px;">
+              <strong>RALLYtoUS + VetsinTech Hackathon Winner</strong><br>
+              <span style="color: var(--text-secondary); font-size: 0.9rem;">By RallyToUS. <a
+                  href="https://devpost.com/software/qwe-8a2wtn" target="_blank"
+                  style="text-decoration: underline;">View Project</a></span>
+            </li>
+
+            <!-- ICPC -->
+            <li style="margin-bottom: 12px; border-left: 2px solid #0077b5; padding-left: 12px;">
+              <strong>ACM - ICPC Regionalist 20'</strong>
+            </li>
+
+            <!-- Stats -->
+            <li style="margin-bottom: 12px; border-left: 2px solid #22C55E; padding-left: 12px;">
+              <strong>Problem Solving</strong><br>
+              <span style="color: var(--text-secondary); font-size: 0.9rem;">Solved over <strong>1000+</strong> problems
+                on GFG/LeetCode/Codeforces. <a href="http://leetcode.com/iamabhishek229313" target="_blank"
+                  style="text-decoration: underline;">LeetCode Profile</a></span>
+            </li>
+
+            <li style="margin-bottom: 12px; border-left: 2px solid #6e5494; padding-left: 12px;">
+              <strong>Open Source</strong><br>
+              <span style="color: var(--text-secondary); font-size: 0.9rem;"><strong>250+</strong> Github stars.</span>
+            </li>
+
+            <!-- Scholar -->
+            <li style="margin-bottom: 12px; border-left: 2px solid #3B82F6; padding-left: 12px;">
+              <strong>SAP Labs India Scholar</strong>
+            </li>
+
+            <li style="margin-bottom: 12px; border-left: 2px solid #EF4444; padding-left: 12px;">
+              <strong>Ex-Mobile Application Lead</strong><br>
+              <span style="color: var(--text-secondary); font-size: 0.9rem;">Flutter. (GOOGLE-DSC AT CVRGU).</span>
+            </li>
           </ul>
         </div>
-      </nav>
+      </section>
 
-      <div class="block block-social">
-        <div class="block-title">Get in touch</div>
-        <div class="block-content">
-          <div class="social-icons">
-            <a rel="me" href="mailto:iamabhishek229313@gmail.com" class="button button-icon u-email"
-              title="mail: iamabhishek229313@gmail.com">
-              <i class="fa fa-envelope"></i>
-            </a>
-
-            <a rel="me" href="https://www.linkedin.com/in/iamabhishek77/" class="button button-icon"
-              title="linkedin: iamabhishek_77">
-              <i class="fa fa-linkedin-square"></i>
-            </a>
-
-            <a rel="me" href="https://github.com/iamabhishek229313" class="button button-icon"
-              title="github: iamabhishek229313">
-              <i class="fa fa-github-square"></i>
-            </a>
+      <!-- EDUCATION -->
+      <section class="card-block">
+        <div class="section-label">08 // EDUCATION</div>
+        <div class="exp-details">
+          <div style="margin-bottom: 16px;">
+            <div style="font-weight: 700; font-size: 1.05rem;">B.Tech. (CSE) - 8.56 CGPA</div>
+            <div style="color: var(--text-secondary); font-size: 0.95rem;">C.V Raman College of Engineering,
+              Bhubaneswar, India</div>
+          </div>
+          <div>
+            <div style="font-weight: 700; font-size: 1.05rem;">STD X - XII</div>
+            <div style="color: var(--text-secondary); font-size: 0.95rem;">Central Board of Secondary Education,
+              Giridih, India</div>
           </div>
         </div>
-      </div>
+      </section>
 
-  </aside>
-
-  <div class="site-main">
-    <div class="site-main-inner">
-      <div class="main-section portfolio-section">
-        <h1 class="main-title">Portfolio</h1>
-
-        <p>See my works below. Unless explicitly stated otherwise, <strong>all their back-end and front-end parts
-            were completely done by me.</strong></p>
-
-        <div class="timeline portfolio-timeline">
-          <ul>
-            <li class="timeline_element timeline_element--now project">
-              <div class="timeline_element-date">
-                <time class="timeline_element-date-text">Now</time>
-              </div>
-
-              <div class="timeline_element-contents">
-                <div class="project-text">
-                  <div class="project-description">
-                    <strong>Currently looking for an Full Time Opportunity as a Software Development
-                      Engineer</strong><br>
-                    <a href="mailto:iamabhishek229313@gmail.com">Contact me</a>. I will answer you in ~24 hours.
-                  </div>
-                </div>
-              </div>
-            </li>
-
-            <li class="timeline_element project">
-              <div class="timeline_element-date">
-                <time class="timeline_element-date-text">April 2024 - Present</time>
-              </div>
-
-              <div class="timeline_element-contents">
-                <div class="project-text">
-                  <a href="https://paymentservices.amazon.com/" class="project-link">
-                    <div class="project-title">Microsoft</div>
-                    <div class="project-subtitle">Software Development Engineer - 2</div>
-                  </a>
-                  <div class="project-description">
-                    <p><strong>Working with Strategic Missions and Technology (SMT) team</strong></p>
-                  </div>
-                  <a href="https://www.microsoft.com/en-in" class="project-readmore button button-red">
-                    More details
-                  </a> 
-                </div> 
-
-
-                <div class="project-image">
-                  <a href="">
-                    <img width="300" src="./assets/microsoft_logo.png" alt="Tripsomnia">
-                  </a>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="timeline_element project">
-              <div class="timeline_element-date">
-                <time class="timeline_element-date-text">Oct 2022 - April 2024</time>
-              </div>
-
-              <div class="timeline_element-contents">
-                <div class="project-text">
-                  <a href="https://paymentservices.amazon.com/" class="project-link">
-                    <div class="project-title">Amazon</div>
-                    <div class="project-subtitle">Software Development Engineer - 1 (L4)</div>
-                  </a>
-                  <div class="project-description">
-                    <p><strong>Worked with Amazon Payment Services (APS) team</strong></p>
-                    <ul>
-                      <li><strong>Top code-contributor</strong> in team of 30+ Software devs.</li>
-                      <li>Enabled customer fraud detection system (end-to-end) for <strong>all the payment options available</strong> at APS with 8k TPS</li>
-                      <li>Reduced latency of core-txn-system by <strong>~200ms per transaction</strong></li>
-                      <li>Built internal application for handling <strong>highly-confidential documents</strong> from merchants, used <strong>AWS, DynamoDB, ReactJs, Type-Script, NodeJS</strong></li>
-                      <li>Contributed on projects that <strong>reduced 8% TAT</strong> on customer compensation and merchant on-boarding time <strong>from 35 days to 6 days</strong></li>
-                      <li>Contributed on multiple <strong>OE/EE</strong> items to reduce <strong>SDE troubleshooting effort</strong>  and  <strong>enable automatic error ticketing</strong></li>
-                    </ul>
-                  </div>
-
-                  <a href="https://paymentservices.amazon.com/" class="project-readmore button button-red">
-                    More details
-                  </a> 
-                </div> 
-
-
-                <div class="project-image">
-                  <a href="">
-                    <img width="300" src="./assets/amazon_logo.webp" alt="Tripsomnia">
-                  </a>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="timeline_element project">
-              <div class="timeline_element-date">
-                <time class="timeline_element-date-text">Dec 2021 - Sept 2022</time>
-              </div>
-
-              <div class="timeline_element-contents">
-                <div class="project-text">
-                  <a href="https://zealth-ai.com/" class="project-link">
-                    <div class="project-title">Zealth-AI (YC W21)</div>
-                    <div class="project-subtitle">Software Development Engineer</div>
-                  </a>
-                  <div class="project-description">
-                    <p><strong>Building digital therapeutics for cancer.</strong></p>
-                  <ul>
-                    <li>Built & deployed <strong> CareShare mobile application for both iOS Android (B2B and B2C facing) from scratch. Architected significant
-                      backend services</strong>, api end-points, & machine-learning algorithms.</li>
-                    <li>Built deployed <strong> Rasa chat-bot for user engagement with customized NLP engine.</strong> Made separate layer for <strong> business logic </strong> to
-                      interact with application.</li>
-                    <li> <strong>Worked on</strong> Flutter, Firebase, Twillio, NodeJS, Reactjs, React-Native, Python, Mongo-DB, PostgresSQL.</li>
-                    <li>Learning <strong> Scaling applications </strong> to millions of users. Working as a Founding Engineer. <strong>Y-Combinator</strong> backed startup.</li>
-                  </ul>
-                  </div>
-
-                  <a href="https://zealth-ai.com/" class="project-readmore button button-red">
-                    More details
-                  </a>
-
-                  <div class="project-technologies">
-                    <div class="technologies-title">Technologies</div>
-                    <ul class="tech-tags">
-                      <li><a href="https://flutter.dev/" rel="nofollow" target="_blank">Flutter</a></li>
-                      <li><a href="https://reactjs.org/" rel="nofollow" target="_blank">React JS</a></li>
-                      <li><a href="https://nodejs.org/en/" rel="nofollow" target="_blank">Node JS</a></li>
-                      <li><a href="https://www.mongodb.com/" rel="nofollow" target="_blank">Mongo-DB</a></li>
-                      <li><a href="https://www.postgresql.org/" rel="nofollow" target="_blank">PostgresSQL</a></li>
-                      <li><a href="https://www.python.org/" rel="nofollow" target="_blank">Python</a></li>
-                      <li><a href="https://rasa.com/" rel="nofollow" target="_blank">Rasa</a></li>
-                      <li><a href="https://aws.amazon.com/" rel="nofollow" target="_blank">AWS</a></li>
-                      <li><a href="https://www.docker.com/" rel="nofollow" target="_blank">Docker</a></li>
-                    </ul>
-                  </div>
-                </div>
-
-
-                <div class="project-image">
-                  <a href="">
-                    <img width="300" src="./assets/zealth_logo.png" alt="Tripsomnia">
-                  </a>
-                </div>
-
-              </div>
-            </li>
-
-
-            <li class="timeline_element project">
-              <div class="timeline_element-date">
-                <time class="timeline_element-date-text">May 2020 - Dec 2021</time>
-              </div>
-
-              <div class="timeline_element-contents">
-                <div class="project-text">
-                  <a href="https://engageml.com/" class="project-link">
-                    <div class="project-title">Aztlan</div>
-                    <div class="project-subtitle">Software Engineering Intern</div>
-                  </a>
-                  <div class="project-description">
-                    <p><strong>Effortless scheduling meets objective based meetings built for hyper productive
-                        teams.</strong></p>
-
-                    <ul>
-                      <li>Working on the work-peer product, creating various reusable components for web and mobile
-                        applications (iOS
-                        and Android) using Flutter.</li>
-                      <li>Used <strong>Test-Driven Design </strong> and used <strong>Bloc Pattern for state
-                          management.</strong> </li>
-                      <li> Worked on the backend part of work-peer product, an enterprise application, using
-                        <strong>Fast-API
-                          framework</strong> and
-                        <strong> ArangoDB</strong>. Created APIs with the workflow.
-                      </li>
-                      <li> Worked on end-to-end development of the product from <strong>deploying APIs on AWS cloud and
-                          integrating</strong> them
-                        with frontend part</li>
-                    </ul>
-                  </div>
-
-                  <a href="https://aztlan.in/" class="project-readmore button button-red">
-                    More details
-                  </a>
-
-                  <div class="project-technologies">
-                    <div class="technologies-title">Technologies</div>
-                    <ul class="tech-tags">
-
-                      <li><a href="https://flutter.dev/" rel="nofollow" target="_blank">Flutter</a></li>
-
-                      <li><a href="https://www.arangodb.com/" rel="nofollow" target="_blank">Arango DB</a></li>
-
-                      <li><a href="https://fastapi.tiangolo.com/" rel="nofollow" target="_blank">Fast-API</a></li>
-                    </ul>
-                  </div>
-                </div>
-
-
-                <div class="project-image">
-                  <a href="">
-                    <img src="./assets/aztlan-workpeer.png" alt="Tripsomnia">
-                  </a>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="timeline_element project">
-              <div class="timeline_element-date">
-                <time class="timeline_element-date-text">2020 Jan - Present</time>
-              </div>
-
-              <div class="timeline_element-contents">
-                <div class="project-text">
-                  <a href="https://github.com/iamabhishek229313" class="project-link">
-                    <div class="project-title">Freelancer</div>
-                    <div class="project-subtitle">Software Engineer</div>
-                  </a>
-                  <div class="project-description">
-                    <p><strong>Worked with many startup teams to build apps in field of e-commerce,
-                        learning, & fresh-ideas</strong></p>
-                    <ul>
-                      <li>Worked with many startups built and deployed significant features
-                        for applications targeting more than <strong>100K+ user base. </strong></li>
-                      <li>• Builttools for flutter and react native developers to integrate GoKwik
-                        payment gateway plugin targeting more than <strong>3 Million user by 2022. </strong></li>
-                    </ul>
-                  </div>
-
-                  <div class="project-technologies">
-                    <div class="technologies-title">Technologies</div>
-                    <ul class="tech-tags">
-                      <li><a href="https://flutter.dev/" rel="nofollow" target="_blank">Flutter</a></li>
-
-                      <li><a rel="nofollow" target="_blank">Android</a></li>
-
-                      <li><a rel="nofollow" target="_blank">Cross Platform Applications</a></li>
-
-                      <li><a rel="nofollow" target="_blank">Payment Gateway</a></li>
-
-                      <li><a rel="nofollow" target="_blank">Node JS</a></li>
-
-                      <li><a rel="nofollow" target="_blank">React Native</a></li>
-
-                      <li><a rel="nofollow" target="_blank">Google Firebase</a></li>
-
-                      <li><a rel="nofollow" target="_blank">Graph QL</a></li>
-
-                    </ul>
-                  </div>
-                  <div class="recommendations">
-                    <div class="technologies-title">Recommendations</div>
-                  <button class="project-readmore button button-red" style="background-color: #4CAF50" onclick="toggleRecommOverlay(false)">
-                    View Recommendations
-                  </button>
-                  </div>
-                </div>
-                <div id="recommendations-overlay" style="position: fixed; transition: 0.5s; transform: translateY(-10000%); z-index: 100; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.8); display: flex; justify-content: center; align-items: center;">
-                  <div style="background-color: white;padding: 1.8rem;  border-radius: 5px; width: 40rem; max-width: 80%; position: relative; font-size: 14px;">
-                    <div style="position: absolute; top: 1rem; right: 1.8rem; font-size: 2rem; cursor: pointer; font-size: 24px;" onclick='toggleRecommOverlay(true)'>&#9932;</div>
-                    <h2 style="padding-bottom: 20px;">Recommendations</h2>
-                    <div>
-                      <div>
-                        <div>
-                          <p style="font-weight: 500; font-size: 1.2rem; margin: 0;">Mritunjoy Das</p>
-                          <p style="margin: 0;">Societe Generale | IIT Madras | ISRO (NESAC)</p>
-                        </div>
-                        <div>
-                          <p style="margin-bottom: 0;">Abhishek is a very hard working, passionate developer. He is an experienced software developer. His work for dogespace actually helped dogespace a lot and honestly I would recommend him to all those who need a hard working developer. I wish abhishek kumar all the best for future.</p>
-                        </div>
-                      </div>
-                      <hr>
-                      <div>
-                        <div>
-                          <p style="font-weight: 500; font-size: 1.2rem; margin: 0;">Abhinav Reddy Appidi</p>
-                          <p style="margin: 0;">Founder AZTLAN</p>
-                        </div>
-                        <div>
-                          <p style="margin-bottom: 0;">Abhishek was part of our tech team and used to handle all design and android development. He was very dedicated towards his work and always keen to learn new things. He's good at mobile application development. I will surely recommend him if you are looking for a clean and brilliant design for your android app or a critical functionality for your android application.</p>
-                        </div>
-                      </div>
-                      <hr>
-                      <div>
-                        <div>
-                          <p style="font-weight: 500; font-size: 1.2rem; margin: 0;">Devendra Dhaka</p>
-                          <p style="margin: 0;">Co-Founder Toppersnotes</p>
-                        </div>
-                        <div>
-                          <p style="margin-bottom: 0;">I was impressed by Abhishek’s ability and development skills to produce high quality and perfect deliverables – effortlessly. That skill often takes years to develop among developers, but it seemed to come perfectly naturally to him.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="project-image">
-                  <a href="">
-                    <img width="300" src="./assets/gokwik.png" alt="FestBlast">
-                  </a>
-                </div>
-
-                <!-- <ul class="">
-                  <li><a href="https://flutter.dev/" rel="nofollow" target="_blank">Flutter</a></li>
-                </ul> -->
-
-              </div>
-            </li>
-
-            <li class="timeline_element project">
-              <div class="timeline_element-date">
-                <time class="timeline_element-date-text">May 2020 - July 2020</time>
-              </div>
-
-              <div class="timeline_element-contents">
-                <div class="project-text">
-                  <a href="https://jivdaya-test.web.app/" class="project-link">
-                    <div class="project-title">Oxeye Technologies</div>
-                    <div class="project-subtitle">Flutter Engineering Intern</div>
-                  </a>
-                  <div class="project-description">
-
-                    <ul>
-                      <li>Worked on cross platform application <strong>JivDaya.</strong> Used flutter as our
-                        frontend framework and google firebase cloudstore as
-                        database(NoSQL).</li>
-                      <li>Used google pub-sub, image resizing, cloud messaging(FCM),
-                        <strong>Razorpay payment gateway</strong>
-                      </li>
-                      <li>Used google pub-sub, image resizing, cloud messaging(FCM)</li>
-                    </ul>
-
-                    <p>Technical wrap-up:</p>
-
-                    <ul>
-                      <li>A hybrid mobile application (for Android 4.0+ &amp; iOS 6+) done in Flutter</li>
-                    </ul>
-                  </div>
-
-                  <a href="https://play.google.com/store/apps/details?id=in.co.oxeye.jivdaya"
-                    class="project-readmore button button-red">
-                    More details
-                  </a>
-
-                  <div class="project-technologies">
-                    <div class="technologies-title">Technologies</div>
-                    <ul class="tech-tags">
-
-                      <li><a href="https://flutter.dev/" rel="nofollow" target="_blank">Flutter</a></li>
-
-                      <li><a rel="nofollow" target="_blank">Android</a></li>
-
-                      <li><a rel="nofollow" target="_blank">Cross Platform Applications</a></li>
-
-                      <li><a rel="nofollow" target="_blank">Payment Gateway</a></li>
-                    </ul>
-                  </div>
-                </div>
-
-
-                <div class="project-image">
-                  <a href="">
-                    <img width="300" src="./assets/oxeye-jivdaya.JPG" alt="FestBlast">
-                  </a>
-                </div>
-
-              </div>
-            </li>
-
-
-
-          </ul>
-        </div>
-      </div>
-    </div>
+    </main>
   </div>
 
-  <!-- Google Analytics -->
-  <script type="text/javascript">
-    (function (i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date(); a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-23318978-1', 'auto');
-    ga('send', 'pageview');
-  </script>
-
-  <!-- Disqus: comments count -->
-  <script type="text/javascript">
-    var disqus_shortname = "Abhishek";
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function () {
-      var s = document.createElement('script'); s.async = true;
-      s.type = 'text/javascript';
-      s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-
-    function toggleRecommOverlay(hide) {
-      let x = document.getElementById('recommendations-overlay');
-      console.log(x)
-      x.style.transform = hide ? 'translateY(-10000%)' : 'translateY(0)';
-      console.log('hello', hide)
-    }
-  </script>
-
-
-
+  <script src="./assets/script.js"></script>
 </body>
-<grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
 
 </html>

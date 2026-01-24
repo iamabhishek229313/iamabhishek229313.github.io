@@ -37,11 +37,7 @@ function updateLeetCodeUI(data) {
     const easyCountEl = document.getElementById('lc-easy-count');
     const mediumCountEl = document.getElementById('lc-medium-count');
     const hardCountEl = document.getElementById('lc-hard-count');
-
-    // Bars
-    const easyBar = document.getElementById('lc-easy-bar');
-    const mediumBar = document.getElementById('lc-medium-bar');
-    const hardBar = document.getElementById('lc-hard-bar');
+    const pieSvg = document.getElementById('lc-pie-svg');
 
     // Update Text
     totalEl.innerText = data.totalSolved;
@@ -49,19 +45,72 @@ function updateLeetCodeUI(data) {
     mediumCountEl.innerText = data.mediumSolved;
     hardCountEl.innerText = data.hardSolved;
 
-    // Calculate Percentages for Bars (relative to total questions? or relative to max? 
-    // Let's make bars fill relative to the total solved for visualization or just 100% of their count vs total questions?
-    // Actually, usually users like to see the distribution. Let's do % of Total Solved.
-    // OR, simpler: just animate them to full width if we treat them as independent bars. 
-    // Let's use % of Total Questions available to show "progress" or just standard visual.
-    // "graphs ... like it shows at the leetcode profile" -> The profile puts them in a circle usually.
-    // A simple bar relative to the total questions in that category is best.
+    // Generate Pie Chart
+    const total = data.easySolved + data.mediumSolved + data.hardSolved;
+    const easyPercent = (data.easySolved / total) * 100;
+    const mediumPercent = (data.mediumSolved / total) * 100;
+    const hardPercent = (data.hardSolved / total) * 100;
 
-    const easyPct = (data.easySolved / data.totalEasy) * 100;
-    const mediumPct = (data.mediumSolved / data.totalMedium) * 100;
-    const hardPct = (data.hardSolved / data.totalHard) * 100;
+    // Colors
+    const colors = {
+        easy: '#00B8A3',
+        medium: '#FFC01E',
+        hard: '#FF375F'
+    };
 
-    easyBar.style.width = `${Math.max(5, easyPct)}%`; // Min 5% so it shows
-    mediumBar.style.width = `${Math.max(5, mediumPct)}%`;
-    hardBar.style.width = `${Math.max(5, hardPct)}%`;
+    // Create pie slices
+    let currentAngle = -90; // Start from top
+    const slices = [
+        { percent: easyPercent, color: colors.easy, label: 'Easy' },
+        { percent: mediumPercent, color: colors.medium, label: 'Medium' },
+        { percent: hardPercent, color: colors.hard, label: 'Hard' }
+    ];
+
+    // Clear existing content
+    pieSvg.innerHTML = '';
+
+    // Draw each slice
+    slices.forEach(slice => {
+        if (slice.percent > 0) {
+            const path = createPieSlice(100, 100, 80, currentAngle, currentAngle + (slice.percent * 3.6), slice.color);
+            pieSvg.appendChild(path);
+            currentAngle += slice.percent * 3.6;
+        }
+    });
+
+    // Add center circle for donut effect
+    const centerCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    centerCircle.setAttribute('cx', '100');
+    centerCircle.setAttribute('cy', '100');
+    centerCircle.setAttribute('r', '50');
+    centerCircle.setAttribute('fill', '#FFFFFF');
+    pieSvg.appendChild(centerCircle);
+}
+
+function createPieSlice(cx, cy, radius, startAngle, endAngle, color) {
+    const start = polarToCartesian(cx, cy, radius, endAngle);
+    const end = polarToCartesian(cx, cy, radius, startAngle);
+    const largeArcFlag = endAngle - startAngle <= 180 ? '0' : '1';
+
+    const d = [
+        'M', cx, cy,
+        'L', start.x, start.y,
+        'A', radius, radius, 0, largeArcFlag, 0, end.x, end.y,
+        'Z'
+    ].join(' ');
+
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', d);
+    path.setAttribute('fill', color);
+    path.setAttribute('class', 'lc-pie-slice');
+
+    return path;
+}
+
+function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
+    const angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
+    return {
+        x: centerX + (radius * Math.cos(angleInRadians)),
+        y: centerY + (radius * Math.sin(angleInRadians))
+    };
 }

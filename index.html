@@ -27,7 +27,7 @@
 
         <div class="status-badge">
           <div class="status-dot"></div>
-          <span>Available for work</span>
+          <span>Open to work</span>
         </div>
 
         <div class="sidebar-contact">
@@ -98,9 +98,13 @@
     <main class="content-area">
 
       <!-- ABOUT -->
-      <section class="card-block">
+      <section class="card-block" style="position: relative;">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
         <div class="section-label">01 // ABOUT</div>
-        <h2 class="hero-text">Hello, I'm Abhishek. <br>Building scalable cloud systems.</h2>
+        <h2 class="hero-text">Hello, I'm <span class="indigo-name">Abhishek</span>. <br>Building scalable cloud systems.
+        </h2>
         <p class="hero-bio">
           I am a <strong>Software Development Engineer 2</strong> at <strong>Microsoft</strong>, working with the
           Strategic Missions and
@@ -229,54 +233,141 @@
         </div>
       </section>
 
+      <!-- OPEN SOURCE CONTRIBUTIONS -->
+      <section class="card-block">
+        <div class="section-label">03 // OPEN SOURCE CONTRIBUTIONS</div>
+
+        <div class="opensource-accordion">
+          <!-- Flutter Plugins -->
+          <details class="opensource-item" open>
+            <summary class="opensource-summary">
+              <div class="opensource-header-left">
+                <div class="opensource-icon">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="opensource-title-group">
+                  <span class="opensource-title">Flutter Plugins</span>
+                  <span class="opensource-subtitle">Pub.dev Packages</span>
+                </div>
+              </div>
+              <i class="fas fa-chevron-down opensource-chevron"></i>
+            </summary>
+            <div class="opensource-details">
+              <p class="opensource-desc">Published Flutter packages used by 3 Million+ devices:</p>
+              <ul class="package-list">
+                <li>
+                  <a href="https://pub.dev/packages/upi_pay" target="_blank" class="package-link">
+                    <strong>upi_pay</strong> - UPI payment integration for Flutter
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://pub.dev/packages/bouncing_characters" target="_blank" class="package-link">
+                    <strong>bouncing_characters</strong> - Animated text widget
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://pub.dev/packages/flutter_gokwik" target="_blank" class="package-link">
+                    <strong>flutter_gokwik</strong> - GoKwik payment gateway integration
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- NPM Packages -->
+          <details class="opensource-item" open>
+            <summary class="opensource-summary">
+              <div class="opensource-header-left">
+                <div class="opensource-icon">
+                  <i class="fab fa-npm"></i>
+                </div>
+                <div class="opensource-title-group">
+                  <span class="opensource-title">NPM Packages</span>
+                  <span class="opensource-subtitle">React Native Libraries</span>
+                </div>
+              </div>
+              <i class="fas fa-chevron-down opensource-chevron"></i>
+            </summary>
+            <div class="opensource-details">
+              <p class="opensource-desc">Published React Native packages:</p>
+              <ul class="package-list">
+                <li>
+                  <a href="https://www.npmjs.com/package/react-native-upi-pay" target="_blank" class="package-link">
+                    <strong>react-native-upi-pay</strong> - UPI payment for React Native
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.npmjs.com/package/react-native-gokwik" target="_blank" class="package-link">
+                    <strong>react-native-gokwik</strong> - GoKwik integration for React Native
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </section>
+
       <!-- PROJECTS -->
       <section class="card-block">
-        <div class="section-label">03 // PROJECTS</div>
+        <div class="section-label">04 // PROJECTS</div>
 
-        <div class="projects-scroller">
+        <div class="projects-accordion">
           <!-- FinShare -->
-          <a href="https://github.com/iamabhishek229313/finshare" target="_blank" class="project-card">
-            <div>
-              <h3 class="project-title">FinShare</h3>
+          <details class="project-item" open>
+            <summary class="project-summary">
+              <div class="project-header-left">
+                <div class="project-icon">
+                  <i class="fas fa-credit-card"></i>
+                </div>
+                <div class="project-title-group">
+                  <span class="project-title">FinShare</span>
+                  <span class="project-subtitle">Financial Card Sharing App</span>
+                </div>
+              </div>
+              <i class="fas fa-chevron-down project-chevron"></i>
+            </summary>
+            <div class="project-details">
               <p class="project-desc">An app, where the cardholder can share their card to partner/family/other/ and can
                 limit their their daily/monthly budgets and per-transaction limits.</p>
+              <a href="https://github.com/iamabhishek229313/finshare" target="_blank" class="project-link">
+                View on GitHub <i class="fas fa-external-link-alt"></i>
+              </a>
             </div>
-            <span class="project-link-text">View Project <i class="fas fa-arrow-right"></i></span>
-          </a>
+          </details>
 
           <!-- Track-My-Covid -->
-          <a href="https://github.com/iamabhishek229313/aws_covid_care" target="_blank" class="project-card">
-            <div>
-              <h3 class="project-title">Track-My-Covid</h3>
+          <details class="project-item" open>
+            <summary class="project-summary">
+              <div class="project-header-left">
+                <div class="project-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="project-title-group">
+                  <span class="project-title">Track-My-Covid</span>
+                  <span class="project-subtitle">COVID Exposure Tracking</span>
+                </div>
+              </div>
+              <i class="fas fa-chevron-down project-chevron"></i>
+            </summary>
+            <div class="project-details">
               <p class="project-desc">Made personalized reports based on COVID exposure of the user by tracking their
                 location metrices.</p>
+              <a href="https://github.com/iamabhishek229313/aws_covid_care" target="_blank" class="project-link">
+                View on GitHub <i class="fas fa-external-link-alt"></i>
+              </a>
             </div>
-            <span class="project-link-text">View Project <i class="fas fa-arrow-right"></i></span>
-          </a>
-
-          <!-- Open Source: Flutter Plugins -->
-          <a href="https://pub.dev/packages/upi_pay" target="_blank" class="project-card">
-            <div>
-              <h3 class="project-title">Flutter Plugins</h3>
-              <p class="project-desc">bouncing_characters, upi_pay, flutter_gokwik. Used by 3 Million+ devices.</p>
-            </div>
-            <span class="project-link-text">View Packages <i class="fas fa-arrow-right"></i></span>
-          </a>
-
-          <!-- Open Source: NPM Packages -->
-          <a href="https://www.npmjs.com/package/react-native-upi-pay" target="_blank" class="project-card">
-            <div>
-              <h3 class="project-title">NPM Packages</h3>
-              <p class="project-desc">react_native_upi_pay, react-native-gokwik.</p>
-            </div>
-            <span class="project-link-text">View Packages <i class="fas fa-arrow-right"></i></span>
-          </a>
+          </details>
         </div>
       </section>
 
       <!-- SKILLS -->
       <section class="card-block">
-        <div class="section-label">04 // SKILLS</div>
+        <div class="section-label">05 // SKILLS</div>
         <div class="skills-grid">
           <div class="skill-tag"><i class="fab fa-java"></i> Java</div>
           <div class="skill-tag"><i class="fab fa-python"></i> Python</div>
@@ -292,7 +383,7 @@
 
       <!-- ACHIEVEMENTS & ACTIVITY -->
       <section class="card-block">
-        <div class="section-label">05 // ACHIEVEMENTS</div>
+        <div class="section-label">06 // ACHIEVEMENTS</div>
 
         <div class="exp-details">
           <ul style="list-style-type: none; padding-left: 0;">
@@ -343,7 +434,7 @@
 
       <!-- EDUCATION -->
       <section class="card-block">
-        <div class="section-label">08 // EDUCATION</div>
+        <div class="section-label">07 // EDUCATION</div>
         <div class="exp-details">
           <div style="margin-bottom: 16px;">
             <div style="font-weight: 700; font-size: 1.05rem;">B.Tech. (CSE) - 8.56 CGPA</div>

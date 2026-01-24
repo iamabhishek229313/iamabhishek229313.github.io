@@ -1,4 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Theme Toggle Logic
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle.querySelector('i');
+
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    if (currentTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    }
+
+    // Toggle theme on button click
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+
+        // Update icon
+        if (document.body.classList.contains('dark-mode')) {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+            localStorage.setItem('theme', 'light');
+        }
+
+        // Update pie chart center color for dark mode
+        updatePieChartTheme();
+    });
+
     // Experience Accordion Logic
     const detailsElements = document.querySelectorAll('details');
     detailsElements.forEach((targetDetail) => {
@@ -83,8 +114,16 @@ function updateLeetCodeUI(data) {
     centerCircle.setAttribute('cx', '100');
     centerCircle.setAttribute('cy', '100');
     centerCircle.setAttribute('r', '50');
-    centerCircle.setAttribute('fill', '#FFFFFF');
+    centerCircle.setAttribute('fill', document.body.classList.contains('dark-mode') ? '#1A1A1A' : '#FFFFFF');
     pieSvg.appendChild(centerCircle);
+}
+
+function updatePieChartTheme() {
+    // Update the center circle color when theme changes
+    const centerCircle = document.querySelector('#lc-pie-svg circle[r="50"]');
+    if (centerCircle) {
+        centerCircle.setAttribute('fill', document.body.classList.contains('dark-mode') ? '#1A1A1A' : '#FFFFFF');
+    }
 }
 
 function createPieSlice(cx, cy, radius, startAngle, endAngle, color) {

@@ -827,6 +827,115 @@ body {
     }
 }
 
+/* Patents Widget */
+.patents-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+    position: relative;
+}
+
+.patents-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #F59E0B, #D946EF, #6366F1);
+}
+
+.patents-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 20px 24px 12px 24px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.patents-icon {
+    color: #F59E0B;
+    font-size: 1.1rem;
+}
+
+.patents-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.patent-item {
+    display: block;
+    padding: 16px 24px;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.patent-item:last-child {
+    border-bottom: none;
+}
+
+.patent-item:hover {
+    background-color: rgba(245, 158, 11, 0.06);
+}
+
+.patent-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #F59E0B, #D97706);
+    color: #FFFFFF;
+    margin-bottom: 6px;
+}
+
+.patent-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+
+.patent-meta {
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+}
+
+.patent-link-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.7rem;
+    color: var(--text-tertiary);
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.patent-item:hover .patent-link-icon {
+    opacity: 1;
+    transform: translateY(-50%) translateX(2px);
+}
+
+/* Dark mode patents */
+body.dark-mode .patents-card {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    background: var(--bg-card);
+}
+
+body.dark-mode .patent-item:hover {
+    background-color: rgba(245, 158, 11, 0.1);
+}
+
 /* LeetCode Stats Widget */
 .leetcode-card {
     background: var(--bg-card);

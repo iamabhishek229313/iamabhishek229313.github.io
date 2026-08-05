@@ -152,22 +152,55 @@ function initParticleBackground() {
 
 async function fetchLeetCodeStats() {
     const username = 'iamabhishek229313';
-    const apiUrl = `https://leetcode-stats-api.herokuapp.com/${username}`;
 
-    try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) throw new Error("API call failed");
-
-        const data = await response.json();
-
-        if (data.status === "success") {
-            updateLeetCodeUI(data);
-        } else {
-            console.error("LeetCode API returned error:", data.message);
+    // List of working LeetCode stats APIs (primary + fallbacks)
+    const apis = [
+        {
+            url: `https://leetcode-api-faisalshohag.vercel.app/${username}`,
+            transform: (data) => data // Same schema: totalSolved, easySolved, mediumSolved, hardSolved
+        },
+        {
+            url: `https://alfa-leetcode-api.onrender.com/userProfile/${username}`,
+            transform: (data) => ({
+                totalSolved: data.totalSolved,
+                easySolved: data.easySolved,
+                mediumSolved: data.mediumSolved,
+                hardSolved: data.hardSolved
+            })
         }
-    } catch (error) {
-        console.error("Failed to fetch LeetCode stats:", error);
+    ];
+
+    for (const api of apis) {
+        try {
+            const response = await fetch(api.url);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+            const raw = await response.json();
+            const data = api.transform(raw);
+
+            if (data.totalSolved != null) {
+                updateLeetCodeUI(data);
+                return; // Success — stop trying further APIs
+            }
+        } catch (error) {
+            console.warn(`LeetCode API failed (${api.url}):`, error.message);
+        }
     }
+
+    // All APIs failed — show error state
+    console.error("All LeetCode APIs failed");
+    showLeetCodeError();
+}
+
+function showLeetCodeError() {
+    const totalEl = document.getElementById('lc-total');
+    if (totalEl) totalEl.innerText = '—';
+    const easyEl = document.getElementById('lc-easy-count');
+    if (easyEl) easyEl.innerText = '—';
+    const mediumEl = document.getElementById('lc-medium-count');
+    if (mediumEl) mediumEl.innerText = '—';
+    const hardEl = document.getElementById('lc-hard-count');
+    if (hardEl) hardEl.innerText = '—';
 }
 
 function updateLeetCodeUI(data) {

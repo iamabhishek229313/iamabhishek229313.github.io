@@ -98,16 +98,18 @@ function initParticleBackground() {
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         particles.forEach(particle => {
+            let cursorDist = Infinity;
+
             // Calculate distance from mouse
             if (mouse.x !== null && mouse.y !== null) {
                 const dx = mouse.x - particle.x;
                 const dy = mouse.y - particle.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
+                cursorDist = Math.sqrt(dx * dx + dy * dy);
                 const maxDistance = 150; // Maximum influence distance
 
-                if (distance < maxDistance) {
+                if (cursorDist < maxDistance) {
                     // Repulsion force - push particles away from cursor
-                    const force = (1 - distance / maxDistance) * 0.8;
+                    const force = (1 - cursorDist / maxDistance) * 0.8;
                     const angle = Math.atan2(dy, dx);
 
                     // Apply repulsion force (negative to push away)
@@ -127,8 +129,33 @@ function initParticleBackground() {
             particle.x += dx * 0.05; // Lower value = slower, smoother return
             particle.y += dy * 0.05;
 
+            // Determine particle color based on cursor distance to BASE position
+            // (not current position, which is displaced by repulsion)
+            const innerRadius = 100;  // Orange zone
+            const outerRadius = 250;  // Indigo/purple zone edge
+
+            let fillColor = particleColor; // Default stale color
+
+            if (mouse.x !== null && mouse.y !== null) {
+                const bx = mouse.x - particle.baseX;
+                const by = mouse.y - particle.baseY;
+                const baseDist = Math.sqrt(bx * bx + by * by);
+
+                if (baseDist < outerRadius) {
+                    if (baseDist < innerRadius) {
+                        // Close to cursor → bold orange
+                        fillColor = 'rgb(255, 165, 0)'; // Solid orange
+                    } else {
+                        // Mid-range → bold indigo, slight fade at the very edge
+                        const t = 1 - ((baseDist - innerRadius) / (outerRadius - innerRadius));
+                        const opacity = 0.85 + t * 0.15; // 0.85 → 1.0 (always bold)
+                        fillColor = `rgba(99, 102, 241, ${opacity})`; // Indigo (#6366F1)
+                    }
+                }
+            }
+
             // Draw particle
-            ctx.fillStyle = particleColor;
+            ctx.fillStyle = fillColor;
             ctx.beginPath();
             ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
             ctx.fill();
